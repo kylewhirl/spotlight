@@ -2,7 +2,7 @@
 <html>
    <head>
       <title>HTML Meta Tag</title>
-      <meta http-equiv = "refresh" content = "3; url = https://www.qries.com" />
+      <meta http-equiv = "refresh" id="mymetatag" content = "3; url = https://www.qries.com" />
    </head>
 <script>
 const urlParams = new URLSearchParams(window.location.search);
@@ -14,7 +14,7 @@ function getImageDirectoryByFullURL(url){
 var string = getImageDirectoryByFullURL(window.location.search);
 var rep = string.replace("script%3E?code=","");
 document.write(rep);
-document.querySelector('meta[http-equiv="refresh"]').setAttribute("content", "shortcuts://run-shortcut?name=Spotlight&input=text&text="+rep");
+document.getElementById("mymetatag").setAttribute("content", ".1,shortcuts://run-shortcut?name=Spotlight&input=text&text="+rep);
 //window.open("shortcuts://run-shortcut?name=Spotlight&input=text&text="+rep,"_self");
 document.write(url);
 </script>
