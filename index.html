@@ -1,0 +1,13 @@
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+var myParam = urlParams.get('code');
+var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
+function getImageDirectoryByFullURL(url){
+    return url.substr(url.lastIndexOf("/")+1);
+}
+var string = getImageDirectoryByFullURL(window.location.search);
+var rep = string.replace("script%3E?code=","");
+document.write(rep);
+window.open("shortcuts://run-shortcut?name=Spotlight&input=text&text="+rep,"_self");
+document.write(url);
+</script>
